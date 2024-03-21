@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header {
+  width: 100vw;
+  height: 5rem;
+  background-color: white;
+  position: fixed;
+  box-shadow: rgba(22, 18, 18, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  z-index: 999;
+  background-color: #ec4aac;
+}
+
+header>ul {
+  position: absolute;
+  top: 1.5rem;
+  left: 5rem;
+  gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  z-index: -111;
+}
+
+.logo_wrap {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+.logo_img {
+  width: 4rem;
+  height: auto;
+}
+
+.searchbar {
+  position: absolute;
+  top: 0.9375rem;
+  right: 7rem;
+  left: auto;
+  transition: all 1s;
+  width: 3.125rem;
+  height: 3.125rem;
+  background: white;
+  box-sizing: border-box;
+  border-radius: 25px;
+  border: 4px solid white;
+  padding: 5px;
+}
+
+.textbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 42.5px;
+  line-height: 30px;
+  outline: 0;
+  border: 0;
+  display: none;
+  font-size: 1em;
+  border-radius: 20px;
+  padding: 0 20px;
+}
+
+.searchicon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  width: 42.5px;
+  height: 42.5px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  color: #07051a;
+  text-align: center;
+  font-size: 1.2em;
+  transition: all 1s;
+}
+
+.searchbar:hover,
+.searchbar:valid{
+  width: 20rem;
+  cursor: pointer;
+}
+
+.searchbar:hover input,
+.searchbar:valid input{
+  display: block;
+}
+
+.searchbar:hover .searchicon,
+.searchbar:valid .searchicon{
+  background: #07051a;
+  color: white;
+}
+
+.profile-button {
+  position: absolute;
+  top: 0.9375rem;;
+  right: 2rem;
+  width: 3.125rem;
+  height: 3.125rem;
+  margin-left: auto;
+  border-radius: 50px;
+  background-color: white;
+  border: none;
+}
+
+.profile-image{
+  font-size: 3.125rem !important;
+}
+
+.alinks {
+  font-family: 'Merriweather Sans', sans-serif;
+  color: black;
+  text-transform: uppercase;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 100ms linear;
+}
+
+.alinks:hover {
+  color: black;
+  cursor: pointer;
+  border-bottom: 3px solid;
+  transition: none 0ms ease;
+  padding: 2px 0 10px;
+}
+
+h1, h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  margin-top: 3rem;
+}
+
+p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.2rem;
+}
+
+li {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+}
+
+.wrap-everything {
+  margin-left: 3rem;
+  margin-right: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
+
+}
+
+.content{
+  height: auto;
+  width: 100%;
+  margin-top: 6rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
