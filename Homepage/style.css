@@ -11,6 +11,8 @@ body {
   overflow-x: hidden;
 }
 
+/* header and components */
+
 header {
   width: 100vw;
   height: 5rem;
@@ -18,7 +20,8 @@ header {
   position: fixed;
   box-shadow: rgba(22, 18, 18, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   z-index: 999;
-  background-color: #ec4aac;
+  background: rgb(216, 12, 131);
+  background: linear-gradient(90deg, rgb(226, 7, 135) 0%, rgba(238,50,148,1) 51%, rgb(241, 69, 158) 100%);
 }
 
 header>ul {
@@ -49,7 +52,7 @@ header>ul {
   top: 0.9375rem;
   right: 7rem;
   left: auto;
-  transition: all 1s;
+  transition: all 0.8s;
   width: 3.125rem;
   height: 3.125rem;
   background: white;
@@ -86,7 +89,7 @@ header>ul {
   color: #07051a;
   text-align: center;
   font-size: 1.2em;
-  transition: all 1s;
+  transition: all 0.2s;
 }
 
 .searchbar:hover,
@@ -139,6 +142,8 @@ header>ul {
   padding: 2px 0 10px;
 }
 
+/* body and components */
+
 h1, h2 {
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
@@ -148,12 +153,15 @@ h1, h2 {
 p {
   font-family: 'Quicksand', sans-serif;
   font-size: 1.2rem;
+  text-indent: 1.5em;
+  padding: 0.3rem;
 }
 
 li {
   font-family: 'Quicksand', sans-serif;
   font-size: 1.2rem;
   margin-left: 1rem;
+  padding: 0.1rem;
 }
 
 .wrap-everything {
@@ -177,8 +185,25 @@ li {
 
 .content-block {
   background-color: rgb(247, 247, 247);
-  border-radius: 5px;
+  border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  padding: 1rem;
-  margin-top: 2rem;
+  padding: 2.5rem;
+  margin-top: 3rem;
+  text-align: justify;
+}
+
+.block-title {
+  padding-bottom: 1rem;
+}
+
+/* footer */
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  padding: 6vh;
+  padding-top: 5rem;
+  font-family: 'Quicksand', sans-serif;
 }
