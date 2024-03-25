@@ -15,16 +15,21 @@ body {
 
 header {
   width: 100vw;
-  height: 5rem;
-  background-color: white;
   position: fixed;
   box-shadow: rgba(22, 18, 18, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   z-index: 999;
   background: rgb(216, 12, 131);
-  background: linear-gradient(90deg, rgb(226, 7, 135) 0%, rgba(238,50,148,1) 51%, rgb(241, 69, 158) 100%);
+  background: linear-gradient(90deg, rgb(226, 7, 135) 0%, rgba(238, 50, 148, 1) 51%, rgb(241, 69, 158) 100%);
 }
 
-header>ul {
+.menu-hamburger {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  margin: 0;
+}
+
+.menu-hamburguer-elements {
   position: absolute;
   top: 1.5rem;
   left: 5rem;
@@ -33,12 +38,97 @@ header>ul {
   flex-direction: row;
   align-items: center;
   list-style: none;
-  z-index: -111;
+}
+
+.menu-hamburguer-elements li {
+  margin-left: 1rem;
+  padding: 0.1rem;
+}
+
+.menu-hamburguer-elements a {
+  font-family: 'Merriweather Sans', sans-serif;
+  color: black;
+  text-transform: uppercase;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 100ms linear;
+}
+
+.menu-hamburguer-elements a:hover {
+  color: black;
+  cursor: pointer;
+  border-bottom: 3px solid;
+  transition: none 0ms ease;
+  padding: 2px 0 10px;
+}
+
+/* BOTÃO MENU HAMBURGUER */
+.menu {
+  background-color: rgb(214, 161, 214);
+  width: 40px;
+  height: 40px;
+  margin: 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none;
+}
+
+.hamburguer {
+  position: relative;
+  display: block;
+  background: #fff;
+  width: 20px;
+  height: 2px;
+  top: 18px;
+  left: 11px;
+  transition: 0.5s ease-in-out;
+}
+
+.hamburguer:before,
+.hamburguer:after {
+  background: #ffff;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: 0.5s ease-in-out;
+}
+
+.hamburguer:before {
+  top: -10px;
+}
+
+.hamburguer:after {
+  bottom: -10px;
+}
+
+input {
+  display: none;
+}
+
+/* rotação dos elementos do span */
+input:checked~label .hamburguer {
+  transform: rotate(45deg);
+}
+
+input:checked~label .hamburguer:before {
+  transform: rotate(90deg);
+  top: 0;
+}
+
+input:checked~label .hamburguer:after {
+  transform: rotate(90deg);
+  bottom: 0;
+}
+
+input:checked~.menu-hamburguer-elements {
+  left: 0;
 }
 
 .logo_wrap {
   position: absolute;
-  left: 0.5rem;
+  left: 4rem;
   top: 0.5rem;
 }
 
@@ -93,25 +183,26 @@ header>ul {
 }
 
 .searchbar:hover,
-.searchbar:valid{
+.searchbar:valid {
   width: 20rem;
   cursor: pointer;
 }
 
 .searchbar:hover input,
-.searchbar:valid input{
+.searchbar:valid input {
   display: block;
 }
 
 .searchbar:hover .searchicon,
-.searchbar:valid .searchicon{
+.searchbar:valid .searchicon {
   background: #07051a;
   color: white;
 }
 
 .profile-button {
   position: absolute;
-  top: 0.9375rem;;
+  top: 0.9375rem;
+  ;
   right: 2rem;
   width: 3.125rem;
   height: 3.125rem;
@@ -121,30 +212,14 @@ header>ul {
   border: none;
 }
 
-.profile-image{
+.profile-image {
   font-size: 3.125rem !important;
-}
-
-.alinks {
-  font-family: 'Merriweather Sans', sans-serif;
-  color: black;
-  text-transform: uppercase;
-  font-size: 15px;
-  text-decoration: none;
-  transition: all 100ms linear;
-}
-
-.alinks:hover {
-  color: black;
-  cursor: pointer;
-  border-bottom: 3px solid;
-  transition: none 0ms ease;
-  padding: 2px 0 10px;
 }
 
 /* body and components */
 
-h1, h2 {
+h1,
+h2 {
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
   margin-top: 3rem;
@@ -155,13 +230,6 @@ p {
   font-size: 1.2rem;
   text-indent: 1.5em;
   padding: 0.3rem;
-}
-
-li {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 1.2rem;
-  margin-left: 1rem;
-  padding: 0.1rem;
 }
 
 .wrap-everything {
@@ -175,7 +243,7 @@ li {
 
 }
 
-.content{
+.content {
   height: auto;
   width: 100%;
   margin-top: 6rem;
@@ -206,4 +274,61 @@ footer {
   padding: 6vh;
   padding-top: 5rem;
   font-family: 'Quicksand', sans-serif;
+}
+
+@media (max-width: 600px) {
+
+  .menu-hamburguer-elements a {
+    color: white !important;
+    transition: all 50ms linear;
+    text-decoration-line: none !important;
+  }
+
+  .menu-hamburguer-elements a:hover {
+    color: black !important;
+    cursor: pointer;
+  }
+
+  .menu-hamburger {
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    align-self: flex-start;
+    overflow: auto;
+    z-index: 1;
+    color: white;
+    overflow: hidden;
+  }
+
+  .menu-hamburguer-elements {
+    width: 60%;
+    height: 100%;
+    background-color: rgba(10, 10, 10, .9);
+    position: fixed;
+    left: -60%;
+    top: 0;
+
+    transition: left cubic-bezier(1, 0, 0, 1) .8s;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-top: 15vh;
+
+    z-index: -1;
+  }
+
+  .menu {
+    display: flex;
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .searchbar:hover,
+  .searchbar:valid {
+    width: 10rem;
+    cursor: pointer;
+  }
 }
